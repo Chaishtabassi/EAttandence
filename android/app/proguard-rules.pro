@@ -8,3 +8,12 @@
 #   http://developer.android.com/guide/developing/tools/proguard.html
 
 # Add any project specific keep options here:
+ -keepattributes *Annovation*
+   -keepclassmembers class ** {
+    @org.greenrobot.eventbus.Subscribe <methods>;
+   }
+ -keep enum org.greenrobot.eventbus.ThreadMode { *; }
+
+ # Keep ML Kit classes
+-keep class com.google.mlkit.** { *; }
+
